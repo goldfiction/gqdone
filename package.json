@@ -1,0 +1,23 @@
+{
+  "name": "gqdone",
+  "version": "0.0.1",
+  "description": "A tool that sends done event message to email recipient",
+  "main": "app.coffee",
+  "private": false,
+  "node_version": "18.20.2",
+  "dependencies": {
+    "gqemail": "^1.0.11"
+  },
+  "devDependencies": {
+    "coffeescript": "2.7.0",
+    "gqtest": ">0.0.17"
+  },
+  "scripts": {
+    "test": "node --require coffeescript/register test.coffee",
+    "test:watch": "nodemon --delay 2 -q -x \"npm test\"",
+    "install:nobin": "npm install --no-bin-links --no-optional --omit=optional --ignore-scripts",
+    "install:prod": "npm install --omit=dev --no-bin-links",
+  },
+  "author": "glidev5@gmail.com",
+  "license": "Apache-2"
+}
