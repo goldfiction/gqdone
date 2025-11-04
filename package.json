@@ -1,8 +1,9 @@
 {
   "name": "gqdone",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A tool that sends done event message to email recipient",
   "main": "app.coffee",
+  "repository": "git@github.com:goldfiction/gqdone.git",
   "private": false,
   "node_version": "18.20.2",
   "dependencies": {
