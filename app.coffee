@@ -2,11 +2,13 @@ _from=null
 _emailit=null
 _setServer=null
 gqemail=null
+fs=require 'fs'
 
 useESModule=(done)->
   try
-    _from = await import(process.cwd() + '/user.js')
-    _from = _from._from
+    if fs.existsSync(process.cwd() + '/user.js')
+      _from = await import(process.cwd() + '/user.js')
+      _from = _from._from
   catch e
     #console.log e
     null
