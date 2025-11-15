@@ -5,7 +5,7 @@ gqemail=null
 
 useESModule=(done)->
   try
-    _from = await import('./user.js')
+    _from = await import(process.cwd() + '/user.js')
     _from = _from._from
   catch e
     #console.log e
