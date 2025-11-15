@@ -14,6 +14,6 @@ it "should be able to get abc",(done)->
   done()
 
 it "should be able to do done",(done)->
-  app.done("testing... code:001",done)
+  app.done("testing... code:002",done)
 
 tests.doRun()

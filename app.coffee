@@ -4,8 +4,12 @@ _setServer=null
 gqemail=null
 
 useESModule=(done)->
-  _from = await import('./user.js')
-  _from = _from._from
+  try
+    _from = await import('./user.js')
+    _from = _from._from
+  catch e
+    #console.log e
+    null
   gqemail = await import('gqemail')
   _emailit = gqemail._emailit
   _setServer = gqemail._setServer
@@ -18,7 +22,7 @@ done=(msg,cb)->
       _address =
         from: _from.user
         to: _from.to
-        title: _from.title||"Notice: a job has been done right now"
+        title: _from.title||"Notice: a job has been done"
         text: msg
 
       #console.log _address
@@ -26,9 +30,10 @@ done=(msg,cb)->
       #console.log "Email sent."
       if cb
         cb()
-        return
-      return
-    sendmail()
+    try
+      sendmail()
+    catch e
+      cb e
 @done=done
 
 @abc="abc"
