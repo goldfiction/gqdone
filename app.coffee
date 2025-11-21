@@ -35,7 +35,8 @@ done=(msg,cb)->
     try
       sendmail()
     catch e
-      cb e
+      if cb
+        cb e
 @done=done
 
 @abc="abc"
